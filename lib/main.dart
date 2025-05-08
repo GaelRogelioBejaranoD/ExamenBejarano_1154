@@ -1,43 +1,35 @@
+import 'package:bejaranoexamen1/Inicio.dart';
+import 'package:bejaranoexamen1/pagina_cinco_GridTile.dart';
+import 'package:bejaranoexamen1/pagina_cuatro_FlutterError.dart';
+import 'package:bejaranoexamen1/pagina_dos_CupertinoActivityIndicator.dart';
+import 'package:bejaranoexamen1/pagina_tres_CustomScrollView.dart';
 import 'package:flutter/material.dart';
+import 'pagina_uno_AnimatedIcon.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MiRutasApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MiRutasApp extends StatelessWidget {
+  const MiRutasApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/': (context) => const PantallaUno(),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/Widget12': (context) => const IconoAnimado(),
 
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
+        '/Widget52': (context) => const CupertinoWidget(),
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
+        '/Widget72': (context) => const CustomScroll(),
+
+        '/Widget92': (context) => ErrorHandlingWidget(),
+
+        '/Widget112': (context) => const Widget113(),
+      },
     );
   }
 }
